@@ -50,8 +50,10 @@ To use the `Sums` module, follow these steps:
 Considering the input: 5,000,000
 
 The time (in seconds) that it takes the sequential version of the function `sum_primes` to end is:
+
+
 ```
-T1 = 58.45s
+T1= 58.45s
 ```
 ### Parallel Execution
 
@@ -66,27 +68,36 @@ The speedup can be calculated using the following formula:
 Sp = T1 / Tp
 ```
 Where:
+
+```
 - "p" is the number of processors (or cores).
 - "T1" is the execution time of the sequential version of the program.
 - "Tp" is the execution time of the parallel version of the program using "p" processors.
 - "Sp" is the speedup obtained using "p" processors.
-
+```
 Considering the use of 4 cores (p = 4), the speedup is as follows:
-
+```
 S4 = T1 / T4 = 58.45s / 18.81s = 3.11s
-
+```
 If we consider the use of cores 6, 8, 10, 12, and 14, we see the following results in time and speedup:
 
+```
 - T6 = 13.38s, S6 = T1 / T6 = 4.37s
 - T8 = 11.64s, S8 = T1 / T8 = 5.02s
 - T10 = 10.60s, S10 = T1 / T10 = 5.51s
 - T12 = 10.20s, S12 = T1 / T12 = 5.73s
 - T14 = 10.59s, S14 = T1 / T14 = 5.52s
+```
+
 
 Graphically, we can see the following trend in terms of both the time it takes and the speedup:
 
-[Insert graphical representation here]
+
+![Link Name](./cores-chart.png)  
+
+
+![Link Name](./speedup-chart.png)  
 
 According to the results, when the number of cores increases, the time it takes for the parallel version of the program to finish is reduced. The reduction in time is primarily due to the ability to distribute the workload among multiple processors or cores. With more processors, the program can be divided into smaller tasks or chunks, and each processor can independently process its assigned task. This division of work allows for better utilization of computational resources and leads to a reduction in overall execution time.
 
-However, it's important to note that the reduction in time may not always be directly proportional to the number of processors or cores used. Factors such as the nature of the program, the presence
+However, it's important to note that the reduction in time may not always be directly proportional to the number of processors or cores used. (Such as when 14 cores were used and I expected the program to finish in less time but it took almost the same amount of time as when 10 cores were used). Factors such as the nature of the program, the presence of dependencies between tasks, communication overhead, and the efficiency of the parallelization approach can impact the achieved speedup. Additionally, there could be resource saturation If we attempt to utilize more cores than our hardware actually has. When we exceed the physical limit of available cores, the system may become overwhelmed, leading to decreased performance. 
