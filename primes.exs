@@ -1,3 +1,9 @@
+# Santiago Benitez
+
+# A01782813
+
+# Sequential and parallel version of a function that sums prime numbers up to a limit (non-inclusive)
+
 defmodule Sums do
   # Divides the range of numbers into smaller ranges for parallel processing
   def range_sum(start, finish, cores) do
